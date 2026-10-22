@@ -1,0 +1,98 @@
+/* Service areas, regional hubs and city pages. */
+
+/* Inline SVG maps built from real county boundaries */
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--map-bg);
+}
+
+/* Regional hub card (Service Areas) */
+.hub-card {
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.hub-card__title {
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 600;
+}
+.hub-card__more {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* City card inside a regional hub */
+.region-card {
+  flex: 1 1 auto;
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+.region-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  align-items: center;
+}
+.region-card__title {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* Office card: map beside address and hours */
+.office-card {
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-wrap: wrap;
+}
+.office-card__map {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+.office-card__info {
+  flex: 1 1 360px;
+  min-width: 0;
+  padding: var(--space-7);
+  border-left: var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.office-card__title {
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+.office-card__address {
+  font-family: var(--sans);
+  font-size: 16px;
+}
+.office-card__hours {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Location card (Service Areas: Westminster, Irvine, Chino) */
+.location__title {
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 600;
+}

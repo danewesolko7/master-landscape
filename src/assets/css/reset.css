@@ -1,0 +1,14 @@
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd, ul, ol {
+  margin: 0;
+}
+
+input, textarea, button, select {
+  font: inherit;
+}
+
+/* Scripts toggle [hidden] on elements that have a display rule of their own. */
+[hidden] {
+  display: none !important;
+}

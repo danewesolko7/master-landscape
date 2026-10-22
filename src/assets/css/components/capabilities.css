@@ -1,0 +1,277 @@
+/* ---------- Capabilities statement (Capabilities.html, layout: document) ----------
+   One US Letter page. tools/pdf.mjs prints it to assets/docs/capabilities-statement.pdf;
+   on screen the same sheet is shown as a page on a soft background. Sizes are in em of
+   .sheet, so the whole sheet scales from one font size. */
+@page {
+  size: letter;
+  margin: 0.45in 0.5in;
+}
+
+.document { background: var(--soft); }
+@media (max-width: 720px) {
+  .document { padding-bottom: 0; } /* no quick-action bar on documents */
+}
+
+/* Screen-only bar above the sheet */
+.document-bar {
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: var(--space-4) var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+}
+.document-bar__home { color: var(--ink); }
+
+.sheet {
+  --sheet-rule: 1px solid var(--rule);
+  max-width: 8.5in;
+  margin: 0 auto var(--space-9);
+  padding: 0.5in;
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--sans);
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--ink);
+  display: grid;
+  gap: 1.35em;
+}
+.sheet p, .sheet ul, .sheet dl, .sheet h1, .sheet h2, .sheet h3 { margin: 0; }
+
+/* Masthead */
+.sheet__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em 2em;
+  padding-bottom: 1em;
+  border-bottom: 4px solid var(--ink);
+}
+.sheet__brand {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.sheet__name {
+  font-family: var(--serif);
+  font-size: 1.85em;
+  line-height: 1.2;
+  font-weight: 600;
+}
+.sheet__tagline {
+  margin-top: 0.15em;
+  font-weight: 600;
+  color: var(--muted);
+}
+.sheet__doc {
+  display: grid;
+  justify-items: end;
+  gap: 0.3em;
+}
+.sheet__year { font-weight: 700; }
+.sheet .label { font-size: 0.95em; }
+.sheet__kicker { color: var(--muted); }
+
+/* Overview and company data */
+.sheet__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2em;
+  align-items: start;
+}
+.sheet__overview {
+  display: grid;
+  gap: 0.9em;
+}
+.sheet__lead {
+  font-family: var(--serif);
+  font-size: 1.6em;
+  line-height: 1.25;
+  font-weight: 600;
+}
+.sheet__text { color: var(--muted); }
+.sheet__data {
+  padding: 1.2em 1.5em 0.4em;
+  background: var(--ink);
+  color: var(--white);
+  border: var(--border);
+  box-shadow: 6px 6px 0 var(--gold);
+}
+.sheet__facts { margin-top: 0.6em; }
+.sheet__facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2em;
+  padding: 0.5em 0;
+  border-bottom: 1px solid var(--line-dark);
+  font-weight: 600;
+}
+.sheet__facts > div:last-child { border-bottom: 0; }
+.sheet__facts dd { text-align: right; }
+
+/* At a glance */
+.sheet__stats {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--deep);
+  border: var(--border);
+  color: var(--on-dark);
+  font-weight: 600;
+}
+.sheet__stats > li {
+  padding: 0.7em 1.2em;
+  display: grid;
+  gap: 0.15em;
+}
+.sheet__stats > li + li { border-left: 1px solid var(--line-dark); }
+.sheet__stat {
+  font-family: var(--serif);
+  font-size: 2em;
+  line-height: 1.1;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* Competencies, differentiators, past performance */
+.sheet__cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.4em;
+  align-items: start;
+}
+.sheet__stack {
+  display: grid;
+  gap: 1.2em;
+}
+.sheet__h2 {
+  padding-bottom: 0.35em;
+  margin-bottom: 0.4em;
+  border-bottom: var(--border);
+  font-family: var(--serif);
+  font-size: 1.4em;
+  line-height: 1.25;
+  font-weight: 600;
+}
+.sheet__ruled {
+  padding: 0;
+  list-style: none;
+}
+.sheet__ruled > li {
+  padding: 0.45em 0;
+  border-bottom: var(--sheet-rule);
+}
+.sheet__ruled p { color: var(--muted); }
+.sheet__h3 {
+  font-family: var(--serif);
+  font-size: 1.3em;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.sheet__bullets {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35em;
+}
+.sheet__bullets > li {
+  position: relative;
+  padding-left: 1.4em;
+}
+.sheet__bullets > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 0.6em;
+  height: 0.6em;
+  background: var(--ink);
+}
+
+/* Map and contact */
+.sheet__foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2em;
+  align-items: start;
+}
+.sheet__map { background: var(--white); }
+.sheet__map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.sheet__contact {
+  padding: 1.2em 1.5em;
+  background: var(--gold);
+  border: var(--border);
+  box-shadow: var(--shadow-md);
+  display: grid;
+  align-content: start;
+  gap: 0.5em;
+}
+.sheet__contact a { color: var(--ink); }
+.sheet__phone {
+  font-family: var(--serif);
+  font-size: 2em;
+  line-height: 1.15;
+  font-weight: 600;
+}
+.sheet__phone a { text-decoration: none; }
+.sheet__address {
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.sheet__sites {
+  padding-top: 0.6em;
+  border-top: 1px solid var(--ink);
+}
+
+/* On screen the phone link is a full 44px target, with room for the .hit areas below it */
+@media screen {
+  .sheet__contact { row-gap: var(--space-3); }
+  .sheet__phone a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* Phones: one column, larger type */
+@media screen and (max-width: 760px) {
+  .sheet {
+    margin-bottom: 0;
+    padding: var(--space-6) var(--gutter);
+    border-width: 2px 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  .sheet__intro, .sheet__cols, .sheet__foot { grid-template-columns: minmax(0, 1fr); }
+  .sheet__doc { justify-items: start; }
+  .sheet__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sheet__stats > li:nth-child(3) { border-left: 0; }
+  .sheet__stats > li:nth-child(n + 3) { border-top: 1px solid var(--line-dark); }
+}
+
+@media print {
+  .document { background: var(--white); }
+  .document-bar, .skip-link { display: none; }
+  .sheet {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .sheet a { text-decoration: none; }
+}

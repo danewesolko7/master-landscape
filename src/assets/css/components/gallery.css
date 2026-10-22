@@ -1,0 +1,78 @@
+/* Photo gallery: service filters and a masonry column layout of captioned photos. */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  align-items: center;
+}
+.filters {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.filter {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: var(--border);
+  background: var(--white);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+/* Each filter is a radio covering its whole label, so the 44px chip is the touch target.
+   :has() hides the photos that don't match; without it every photo stays visible. */
+.filter { position: relative; cursor: pointer; }
+.filter input {
+  position: absolute;
+  inset: -2px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.filter:has(input:checked) { background: var(--gold); box-shadow: var(--shadow-sm); }
+.filter:has(input:focus-visible) {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--gold-pale);
+}
+section:has(.filters [value="maintenance"]:checked) .gallery__item:not([data-service="maintenance"]),
+section:has(.filters [value="irrigation"]:checked) .gallery__item:not([data-service="irrigation"]),
+section:has(.filters [value="tree-care"]:checked) .gallery__item:not([data-service="tree-care"]),
+section:has(.filters [value="construction"]:checked) .gallery__item:not([data-service="construction"]) {
+  display: none;
+}
+
+.gallery {
+  columns: 3 320px;
+  column-gap: var(--space-6);
+}
+.gallery__item {
+  margin: 0 0 var(--space-6);
+  break-inside: avoid;
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+.gallery__caption {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.gallery__kind {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.gallery__title { font-size: 17px; font-weight: 600; }
