@@ -1,0 +1,63 @@
+/* Contact: the dark contact card and the emergency card beside the RFP form. */
+
+.contact-aside {
+  flex: 1 1 380px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.contact-card {
+  background: var(--ink);
+  color: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-gold);
+  padding: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.contact-card__phone {
+  align-self: flex-start;
+  color: var(--white);
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+}
+.contact-card__text {
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.55;
+  color: var(--on-dark);
+  text-wrap: pretty;
+}
+.contact-list {
+  border-top: 1px solid var(--line-dark);
+  font-family: var(--sans);
+  font-size: 15px;
+}
+.contact-list__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line-dark);
+}
+.contact-list__term { font-weight: 600; color: var(--on-dark); }
+.contact-list__value {
+  font-weight: 700;
+  color: var(--white);
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.emergency-card {
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}

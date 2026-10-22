@@ -1,0 +1,43 @@
+body {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+a { color: var(--ink); }
+a:hover { color: var(--deep); }
+/* Long addresses wrap instead of overflowing narrow screens. */
+a[href^="mailto:"] { overflow-wrap: anywhere; }
+
+em { font-weight: 400; }
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--gold-pale);
+}
+
+/* No widows: balance short text, keep paragraphs from ending on one word. */
+h1, h2, h3, li, a, span, label, dt, figcaption, button, nav, th, td, strong, em { text-wrap: balance; }
+p, dd, blockquote { text-wrap: pretty; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 10;
+  padding: 12px 18px;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+}
+.skip-link:focus { left: 8px; }
+
+@media (max-width: 720px) {
+  body { padding-bottom: 72px; }
+}
