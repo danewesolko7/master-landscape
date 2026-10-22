@@ -1,0 +1,534 @@
+<!--
+title: Style Guide | Master Landscape & Maintenance
+description: Internal design system reference for the Master Landscape & Maintenance website: colors, type, layout, components, states and brand assets.
+robots: noindex
+placeholders: example
+-->
+<section aria-labelledby="page-title">
+  <div class="section__inner section__inner--top">
+    <nav aria-label="Breadcrumb" class="breadcrumb"><ol><li><a href="index.html">Home</a></li> <li aria-current="page">Style&nbsp;guide</li></ol></nav>
+    <div class="hero">
+      <div class="hero__main">
+        <p class="eyebrow">Design&nbsp;system</p>
+        <h1 id="page-title" class="title">Refined <em>brutalist</em></h1>
+        <p class="lede">The tokens, type and components behind every page. Square corners, heavy rules, hard shadows and one gold&nbsp;accent.</p>
+      </div>
+      <div class="hero__aside"><p class="hero__note">Internal reference. Built from the live CSS, so it always matches the site. Not linked from the site and hidden from search&nbsp;engines.</p></div>
+    </div>
+    <nav aria-label="On this page" class="mt-2">
+      <ul class="chips">
+        <li><a href="#sg-logo" class="chip">Logo</a></li>
+        <li><a href="#sg-color" class="chip">Color</a></li>
+        <li><a href="#sg-type" class="chip">Typography</a></li>
+        <li><a href="#sg-layout" class="chip">Layout</a></li>
+        <li><a href="#sg-buttons" class="chip">Buttons &amp;&nbsp;links</a></li>
+        <li><a href="#sg-cards" class="chip">Cards &amp;&nbsp;chips</a></li>
+        <li><a href="#sg-forms" class="chip">Forms</a></li>
+        <li><a href="#sg-nav" class="chip">Navigation</a></li>
+        <li><a href="#sg-bands" class="chip">Callouts &amp;&nbsp;bands</a></li>
+        <li><a href="#sg-lists" class="chip">Lists</a></li>
+        <li><a href="#sg-images" class="chip">Images</a></li>
+        <li><a href="#sg-states" class="chip">Designed&nbsp;states</a></li>
+        <li><a href="#sg-voice" class="chip">Voice &amp;&nbsp;imagery</a></li>
+        <li><a href="#sg-brand" class="chip">Brand&nbsp;assets</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+<section aria-labelledby="sg-logo" class="section">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-logo" class="heading">Logo</h2><p class="subhead">01 · The M-and-laurel mark and the full&nbsp;lockup.</p>
+    </div>
+
+<div class="styleguide-cols">
+  <div>
+    <ul class="desc">
+      <li>Mark: the M in a double ring with a laurel&nbsp;below.</li>
+      <li>Clear space: the ring's width on every&nbsp;side.</li>
+      <li>Minimum size: 32 px for the mark, 200 px for the&nbsp;lockup.</li>
+      <li>On dark: gold mark on ink (the favicon). Never white on&nbsp;gold.</li>
+      <li>Don't stretch, recolor, add shadows or set the name in another&nbsp;face.</li>
+      <li>Lockup name: Source Serif 4, bold plus&nbsp;italic.</li>
+    </ul>
+  </div>
+  <div class="styleguide-example styleguide-example--column">
+    <div class="styleguide-logo brand"><!-- @include logo size="64" --><span class="brand__name">Master Landscape <span>&amp; Maintenance,&nbsp;Inc.</span></span></div>
+    <div class="styleguide-logo"><!-- @include logo size="32" --><span class="meta">32 px minimum&nbsp;mark</span></div>
+    <div class="styleguide-logo styleguide-logo--dark"><img src="assets/favicon.svg" alt="Gold M mark on ink" width="64" height="64"><span class="text-white text-ui">On dark: gold on&nbsp;ink</span></div>
+  </div>
+</div>
+<pre class="styleguide-code styleguide-code--solo"><code>&lt;!-- @include logo size="42" --&gt;   &lt;!-- src/partials/logo.html; the header uses size 42 --&gt;</code></pre>
+  </div>
+</section>
+<section aria-labelledby="sg-color" class="section section--soft">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-color" class="heading">Color</h2><p class="subhead">02 · Gold is for action and emphasis&nbsp;only.</p>
+    </div>
+
+<ul class="grid grid--narrow mt-2">
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-ink"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">Ink</p><p class="meta"><code>--ink</code> · #13281C</p><p class="desc">Text, rules, dark&nbsp;bands</p></figcaption></figure></li>
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-deep"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">Deep green</p><p class="meta"><code>--deep</code> · #1D3B2A</p><p class="desc">Feature tiles, mark&nbsp;detail</p></figcaption></figure></li>
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-gold"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">Gold</p><p class="meta"><code>--gold</code> · #F2B33D</p><p class="desc">Primary buttons,&nbsp;accents</p></figcaption></figure></li>
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-gold-pale"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">Pale gold</p><p class="meta"><code>--gold-pale</code> · #F7D58B</p><p class="desc">Callouts, focus&nbsp;ring</p></figcaption></figure></li>
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-soft"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">Soft</p><p class="meta"><code>--soft</code> · #F4F6F2</p><p class="desc">Alternate&nbsp;sections</p></figcaption></figure></li>
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-muted"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">Muted</p><p class="meta"><code>--muted</code> · #3E4E44</p><p class="desc">Secondary&nbsp;text</p></figcaption></figure></li>
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-rule"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">Rule</p><p class="meta"><code>--rule</code> · #B9C4BC</p><p class="desc">Hairlines in&nbsp;lists</p></figcaption></figure></li>
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-line-dark"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">Dark line</p><p class="meta"><code>--line-dark</code> · #2C5440</p><p class="desc">Rules on dark&nbsp;bands</p></figcaption></figure></li>
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-on-dark"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">On dark</p><p class="meta"><code>--on-dark</code> · #D6E2DA</p><p class="desc">Body text on&nbsp;dark</p></figcaption></figure></li>
+  <li><figure class="styleguide-swatch"><div class="styleguide-swatch__chip styleguide-error"></div>
+    <figcaption class="styleguide-swatch__body"><p class="styleguide-swatch__name">Error</p><p class="meta"><code>--error</code> · #A4262C</p><p class="desc">Form errors&nbsp;only</p></figcaption></figure></li>
+</ul>
+<h3 class="title-sm mt-2">Contrast&nbsp;pairs</h3>
+<p class="desc">WCAG AA needs 4.5 : 1 for body text and 3 : 1 for large text. Never put white text on gold: use ink on&nbsp;gold.</p>
+<div class="styleguide-table-wrap mt-2"><table class="styleguide-table"><caption class="visually-hidden">Color contrast pairs</caption><thead><tr><th scope="col">Sample</th><th scope="col">Pair</th><th scope="col">Ratio</th><th scope="col">Use</th></tr></thead><tbody>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--ink-white">Aa</span></td><td>Ink on white</td><td>15.6 : 1</td><td>All text</td></tr>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--ink-gold">Aa</span></td><td>Ink on gold</td><td>8.4 : 1</td><td>Buttons, tags</td></tr>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--ink-gold-pale">Aa</span></td><td>Ink on pale gold</td><td>11.0 : 1</td><td>Callouts</td></tr>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--ink-soft">Aa</span></td><td>Ink on soft</td><td>14.3 : 1</td><td>Alternate sections</td></tr>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--muted-white">Aa</span></td><td>Muted on white</td><td>8.8 : 1</td><td>Secondary text</td></tr>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--white-ink">Aa</span></td><td>White on ink</td><td>15.6 : 1</td><td>Dark bands</td></tr>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--gold-ink">Aa</span></td><td>Gold on ink</td><td>8.4 : 1</td><td>Numbers, accents</td></tr>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--on-dark-ink">Aa</span></td><td>On dark on ink</td><td>11.7 : 1</td><td>Body on dark</td></tr>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--error-white">Aa</span></td><td>Error on white</td><td>7.3 : 1</td><td>Error messages</td></tr>
+<tr><td><span aria-hidden="true" class="styleguide-pair styleguide-pair--white-gold">Aa</span></td><td>White on gold</td><td>1.9 : 1</td><td><strong>Never</strong></td></tr>
+</tbody></table></div>
+  </div>
+</section>
+<section aria-labelledby="sg-type" class="section">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-type" class="heading">Typography</h2><p class="subhead">03 · Source Serif 4 for reading, IBM Plex Sans for the&nbsp;interface.</p>
+    </div>
+
+<ul class="styleguide-specimens mt-2">
+  <li><div><p class="subhead">Display · H1&nbsp;·&nbsp;<code>.title</code></p><p class="desc">Source Serif 4 600 · 32–60 px · 1.08&nbsp;·&nbsp;−2%</p></div><div><p class="title">Commercial Landscape&nbsp;<em>Maintenance</em></p></div></li>
+  <li><div><p class="subhead">H2&nbsp;·&nbsp;<code>.heading</code></p><p class="desc">Source Serif 4 600 · 30–40 px&nbsp;·&nbsp;1.15</p></div><div><p class="heading">Who We&nbsp;Serve</p></div></li>
+  <li><div><p class="subhead">Callout or form title&nbsp;·&nbsp;<code>.title-md</code></p><p class="desc">Source Serif 4 600 · 28 px&nbsp;·&nbsp;1.25</p></div><div><p class="title-md">Request a&nbsp;proposal</p></div></li>
+  <li><div><p class="subhead">H3&nbsp;·&nbsp;<code>.title-sm</code></p><p class="desc">Source Serif 4 600 · 21 px&nbsp;·&nbsp;1.3</p></div><div><p class="title-sm">Certified irrigation&nbsp;audits</p></div></li>
+  <li><div><p class="subhead">Lead&nbsp;·&nbsp;<code>.lede</code></p><p class="desc">Source Serif 4 400 · 19 px&nbsp;·&nbsp;1.6</p></div><div><p class="lede">Full service commercial landscape maintenance for public agencies, HOAs and commercial&nbsp;properties.</p></div></li>
+  <li><div><p class="subhead">Body</p><p class="desc">Source Serif 4 400 · 17 px&nbsp;·&nbsp;1.65</p></div><div><p>Every contract includes full-time on-staff supervision, so problems are caught and fixed before they reach&nbsp;you.</p></div></li>
+  <li><div><p class="subhead">Eyebrow&nbsp;·&nbsp;<code>.eyebrow</code></p><p class="desc">IBM Plex Sans 600 · 14 px · caps&nbsp;·&nbsp;+8%</p></div><div><p class="eyebrow">Service 01 of&nbsp;05</p></div></li>
+  <li><div><p class="subhead">Label&nbsp;·&nbsp;<code>.label</code></p><p class="desc">IBM Plex Sans 700 · 14 px · caps&nbsp;·&nbsp;+8%</p></div><div><p class="label">Filter by&nbsp;service</p></div></li>
+  <li><div><p class="subhead">UI · <code>.text-ui</code>, <code>.desc</code>,&nbsp;<code>.meta</code></p><p class="desc">IBM Plex Sans 600–700 · 15–17&nbsp;px</p></div><div><p class="text-ui">Request a proposal&nbsp;→</p></div></li>
+  <li><div><p class="subhead">Accent&nbsp;·&nbsp;<code>em</code></p><p class="desc">Italic 400 inside headings, one phrase&nbsp;only</p></div><div><p class="heading">Our own <em>nursery</em></p></div></li>
+</ul>
+<p class="desc styleguide-note">Headings use <code>text-wrap: balance</code> and paragraphs <code>text-wrap: pretty</code>. Join the last two words of short items with <code>&amp;nbsp;</code> so nothing ends on a single word. Fonts are self-hosted WOFF2 files in <code>assets/fonts/</code>.</p>
+
+  </div>
+</section>
+<section aria-labelledby="sg-layout" class="section section--soft">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-layout" class="heading">Layout</h2><p class="subhead">04 · Grid, spacing, rules and&nbsp;shadows.</p>
+    </div>
+
+<ul class="points mt-2">
+  <li><span class="points__num">01</span><h3 class="title-sm">Container</h3><p class="desc">1320 px max (<code>--max</code>); side padding <code>--gutter</code> grows from 24 px on phones to 32&nbsp;px.</p></li>
+  <li><span class="points__num">02</span><h3 class="title-sm">Hero grid</h3><p class="desc">Two-thirds text column, one-third side note, <code>--space-11</code> gap; one column under 900&nbsp;px.</p></li>
+  <li><span class="points__num">03</span><h3 class="title-sm">Sections</h3><p class="desc"><code>--space-9</code> top, <code>--space-10</code> bottom; a 2 px ink rule between every&nbsp;section.</p></li>
+  <li><span class="points__num">04</span><h3 class="title-sm">Grids</h3><p class="desc"><code>grid--narrow</code>, <code>grid</code>, <code>grid--wide</code>, <code>grid--half</code>: 5, 4, 3 and 2 across at&nbsp;1440.</p></li>
+  <li><span class="points__num">05</span><h3 class="title-sm">Rules</h3><p class="desc">2 px ink for structure, 1 px #B9C4BC hairlines inside&nbsp;lists.</p></li>
+  <li><span class="points__num">06</span><h3 class="title-sm">Shadows</h3><p class="desc">Hard offset, no blur: 4 px buttons, 6 px cards, 8 px heroes and&nbsp;panels.</p></li>
+  <li><span class="points__num">07</span><h3 class="title-sm">Corners</h3><p class="desc">Square everywhere. No&nbsp;radius.</p></li>
+  <li><span class="points__num">08</span><h3 class="title-sm">Touch</h3><p class="desc">Every link and button is at least 44 × 44 px. Small links get&nbsp;<code>.hit</code>.</p></li>
+</ul>
+<h3 class="title-sm mt-2">Spacing&nbsp;scale</h3>
+<p class="desc">Every gap, padding and margin in layouts and components uses a step. Controls (buttons, inputs, chips) keep their own fixed&nbsp;sizes.</p>
+<ul class="styleguide-space mt-1">
+  <li data-space="1"><code>--space-1</code><span class="styleguide-space__px">6&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="2"><code>--space-2</code><span class="styleguide-space__px">10&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="3"><code>--space-3</code><span class="styleguide-space__px">14&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="4"><code>--space-4</code><span class="styleguide-space__px">18&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="5"><code>--space-5</code><span class="styleguide-space__px">22&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="6"><code>--space-6</code><span class="styleguide-space__px">28&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="7"><code>--space-7</code><span class="styleguide-space__px">36&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="8"><code>--space-8</code><span class="styleguide-space__px">44&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="9"><code>--space-9</code><span class="styleguide-space__px">56&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="10"><code>--space-10</code><span class="styleguide-space__px">64&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+  <li data-space="11"><code>--space-11</code><span class="styleguide-space__px">76&nbsp;px</span><span class="styleguide-space__bar" aria-hidden="true"></span></li>
+</ul>
+<h3 class="title-sm mt-2">Shadows</h3>
+<div class="styleguide-example mt-1">
+  <div class="styleguide-box styleguide-box--sm"><code>--shadow-sm</code>&nbsp;4</div>
+  <div class="styleguide-box styleguide-box--md"><code>--shadow-md</code>&nbsp;6</div>
+  <div class="styleguide-box styleguide-box--lg"><code>--shadow-lg</code>&nbsp;8</div>
+  <div class="styleguide-box styleguide-box--gold"><code>--shadow-gold</code>&nbsp;8</div>
+</div>
+<h3 class="title-sm mt-2">Section with heading&nbsp;row</h3>
+<pre class="styleguide-code styleguide-code--solo"><code>&lt;section aria-labelledby="s1" class="section section--soft"&gt;   &lt;!-- or "section" (white) --&gt;
+  &lt;div class="section__inner"&gt;
+    &lt;div class="section-head"&gt;
+      &lt;h2 id="s1" class="heading"&gt;Local&amp;nbsp;&lt;em&gt;Proof&lt;/em&gt;&lt;/h2&gt;&lt;p class="subhead"&gt;Note on the right&lt;/p&gt;
+    &lt;/div&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+<h3 class="title-sm mt-2">Page top: breadcrumb and&nbsp;hero</h3>
+<p class="desc">The top of this page is a live example. Keep the single space between breadcrumb items: the separator is&nbsp;CSS.</p>
+<pre class="styleguide-code styleguide-code--solo"><code>&lt;section aria-labelledby="page-title"&gt;
+  &lt;div class="section__inner section__inner--top"&gt;
+    &lt;nav aria-label="Breadcrumb" class="breadcrumb"&gt;&lt;ol&gt;&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li aria-current="page"&gt;Page&lt;/li&gt;&lt;/ol&gt;&lt;/nav&gt;
+    &lt;div class="hero"&gt;
+      &lt;div class="hero__main"&gt;
+        &lt;p class="eyebrow"&gt;Eyebrow&lt;/p&gt;
+        &lt;h1 id="page-title" class="title"&gt;Heading &lt;em&gt;emphasis&lt;/em&gt;&lt;/h1&gt;
+        &lt;p class="lede"&gt;Intro paragraph.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="hero__aside"&gt;&lt;p class="hero__note"&gt;Side note.&lt;/p&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+  </div>
+</section>
+<section aria-labelledby="sg-buttons" class="section">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-buttons" class="heading">Buttons &amp;&nbsp;links</h2><p class="subhead">05 · Gold for the one main action. Hover and tab to see the live&nbsp;states.</p>
+    </div>
+<div class="styleguide-demo">
+<div class="styleguide-example">
+<a href="Contact.html" class="btn btn--primary">Request a&nbsp;proposal&nbsp;→</a>
+<a href="Contact.html#rfp" class="btn btn--secondary">Submit an&nbsp;RFP</a>
+<a href="Contact.html" class="btn btn--primary btn--sm">Request a&nbsp;proposal</a>
+</div>
+<pre class="styleguide-code"><code>&lt;a href="Contact.html" class="btn btn--primary"&gt;Request a&amp;nbsp;proposal&amp;nbsp;→&lt;/a&gt;
+&lt;a href="Contact.html#rfp" class="btn btn--secondary"&gt;Submit an&amp;nbsp;RFP&lt;/a&gt;
+&lt;a href="Contact.html" class="btn btn--primary btn--sm"&gt;Request a&amp;nbsp;proposal&lt;/a&gt;</code></pre>
+</div>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--dark">
+<a href="Contact.html" class="btn btn--primary btn--on-dark">Request a&nbsp;proposal&nbsp;→</a>
+<a href="Contact.html#rfp" class="btn btn--ghost-light">Submit an&nbsp;RFP</a>
+</div>
+<pre class="styleguide-code"><code>&lt;a href="Contact.html" class="btn btn--primary btn--on-dark"&gt;Request a&amp;nbsp;proposal&amp;nbsp;→&lt;/a&gt;
+&lt;a href="Contact.html#rfp" class="btn btn--ghost-light"&gt;Submit an&amp;nbsp;RFP&lt;/a&gt;</code></pre>
+</div>
+<div class="styleguide-demo">
+<div class="styleguide-example">
+<a href="GuideAB1572.html" class="text-link">Read the&nbsp;guide&nbsp;→</a>
+<p>Inline in text: see our <a href="IrrigationAudits.html">certified irrigation audits</a> for&nbsp;details.</p>
+</div>
+<pre class="styleguide-code"><code>&lt;a href="GuideAB1572.html" class="text-link"&gt;Read the&amp;nbsp;guide&amp;nbsp;→&lt;/a&gt;
+&lt;p&gt;Inline in text: see our &lt;a href="IrrigationAudits.html"&gt;certified irrigation audits&lt;/a&gt; for&amp;nbsp;details.&lt;/p&gt;</code></pre>
+</div>
+<p class="desc styleguide-note">Modifiers: <code>--primary</code>, <code>--secondary</code>, <code>--sm</code> (48 px), <code>--block</code> (full width), <code>--on-dark</code>, <code>--ghost-light</code>. <code>.text-link--sm</code> for smaller arrow links. Focus always shows the 3 px ink outline and pale-gold&nbsp;halo.</p>
+  </div>
+</section>
+<section aria-labelledby="sg-cards" class="section section--soft">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-cards" class="heading">Cards &amp;&nbsp;chips</h2><p class="subhead">06 · The whole card is the&nbsp;link.</p>
+    </div>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--block">
+<ul class="grid">
+  <li><a href="IrrigationAudits.html" class="link-card">
+    <span class="card-title">Certified irrigation&nbsp;audits</span><span class="desc">A measured audit of how your system&nbsp;waters.</span><span class="card-more">Certified irrigation&nbsp;audits&nbsp;→</span>
+  </a></li>
+  <li><a href="PublicAgencies.html" class="link-card link-card--roomy">
+    <span class="tag tag--soft self-start">Audience</span><span class="title-sm">Cities &amp; public&nbsp;agencies</span><span class="desc">County of Orange and seven&nbsp;cities.</span><span class="card-more">Cities &amp; public&nbsp;agencies&nbsp;→</span>
+  </a></li>
+</ul>
+</div>
+<pre class="styleguide-code"><code>&lt;ul class="grid"&gt;
+  &lt;li&gt;&lt;a href="IrrigationAudits.html" class="link-card"&gt;
+    &lt;span class="card-title"&gt;Certified irrigation&amp;nbsp;audits&lt;/span&gt;&lt;span class="desc"&gt;A measured audit of how your system&amp;nbsp;waters.&lt;/span&gt;&lt;span class="card-more"&gt;Certified irrigation&amp;nbsp;audits&amp;nbsp;→&lt;/span&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="PublicAgencies.html" class="link-card link-card--roomy"&gt;
+    &lt;span class="tag tag--soft self-start"&gt;Audience&lt;/span&gt;&lt;span class="title-sm"&gt;Cities &amp;amp; public&amp;nbsp;agencies&lt;/span&gt;&lt;span class="desc"&gt;County of Orange and seven&amp;nbsp;cities.&lt;/span&gt;&lt;span class="card-more"&gt;Cities &amp;amp; public&amp;nbsp;agencies&amp;nbsp;→&lt;/span&gt;
+  &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--block">
+<article class="card">
+  <div role="img" aria-label="Image placeholder: project photo" class="placeholder media--xs"><span class="placeholder__label">Project photo: property type and&nbsp;city</span></div>
+  <div class="card-body card-body--rule"><p class="eyebrow eyebrow--sm">HOA</p><h3 class="card-name">Example&nbsp;community</h3><p class="meta">Full service maintenance since&nbsp;2019.</p></div>
+</article>
+</div>
+<pre class="styleguide-code"><code>&lt;article class="card"&gt;
+  &lt;div role="img" aria-label="Image placeholder: project photo" class="placeholder media--xs"&gt;&lt;span class="placeholder__label"&gt;Project photo: property type and&amp;nbsp;city&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="card-body card-body--rule"&gt;&lt;p class="eyebrow eyebrow--sm"&gt;HOA&lt;/p&gt;&lt;h3 class="card-name"&gt;Example&amp;nbsp;community&lt;/h3&gt;&lt;p class="meta"&gt;Full service maintenance since&amp;nbsp;2019.&lt;/p&gt;&lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</div>
+<div class="styleguide-demo">
+<div class="styleguide-example">
+<ul class="chips">
+  <li><a href="Westminster.html" class="chip">Westminster<span class="chip__note">· Main&nbsp;office</span></a></li>
+  <li><a href="Irvine.html" class="chip">Irvine</a></li>
+</ul>
+<span class="tag tag--gold">Current</span>
+<span class="tag tag--soft">Audience</span>
+</div>
+<pre class="styleguide-code"><code>&lt;ul class="chips"&gt;
+  &lt;li&gt;&lt;a href="Westminster.html" class="chip"&gt;Westminster&lt;span class="chip__note"&gt;· Main&amp;nbsp;office&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="Irvine.html" class="chip"&gt;Irvine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;span class="tag tag--gold"&gt;Current&lt;/span&gt;
+&lt;span class="tag tag--soft"&gt;Audience&lt;/span&gt;</code></pre>
+</div>
+<div class="styleguide-demo">
+<div class="styleguide-example">
+<ul class="filters">
+  <li><a href="Gallery.html" aria-current="true" class="filter filter--active">All</a></li>
+  <li><a href="Gallery.html" class="filter">Irrigation</a></li>
+  <li><a href="Gallery.html" class="filter">Tree&nbsp;care</a></li>
+</ul>
+</div>
+<pre class="styleguide-code"><code>&lt;ul class="filters"&gt;   &lt;!-- Gallery page filters --&gt;
+  &lt;li&gt;&lt;a href="Gallery.html" aria-current="true" class="filter filter--active"&gt;All&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="Gallery.html" class="filter"&gt;Irrigation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+<p class="desc styleguide-note">Grids: <code>grid--narrow</code> (220 px columns), <code>grid</code> (280 px), <code>grid--wide</code> (340 px) and <code>grid--half</code> (520 px) set the minimum column&nbsp;width. <code>.card-title</code> is 19 px, <code>--md</code> 20 px, <code>--lg</code> 22&nbsp;px.</p>
+  </div>
+</section>
+<section aria-labelledby="sg-forms" class="section">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-forms" class="heading">Forms</h2><p class="subhead">07 · Labels always visible above the field. Errors say how to fix the&nbsp;problem.</p>
+    </div>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--block styleguide-example--narrow">
+<div class="form">
+  <label class="field">Name<input type="text" autocomplete="name" class="input input--fill"></label>
+  <label class="field">Property type<select class="input input--fill input--select"><option>HOA / community association</option><option>Public agency</option></select></label>
+  <label class="field">Services needed<textarea rows="4" class="input input--fill input--area"></textarea></label>
+  <button type="button" class="submit">Request my&nbsp;proposal</button>
+</div>
+</div>
+<pre class="styleguide-code"><code>&lt;div class="form"&gt;
+  &lt;label class="field"&gt;Name&lt;input type="text" autocomplete="name" class="input input--fill"&gt;&lt;/label&gt;
+  &lt;label class="field"&gt;Property type&lt;select class="input input--fill input--select"&gt;&lt;option&gt;HOA / community association&lt;/option&gt;&lt;option&gt;Public agency&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+  &lt;label class="field"&gt;Services needed&lt;textarea rows="4" class="input input--fill input--area"&gt;&lt;/textarea&gt;&lt;/label&gt;
+  &lt;button type="button" class="submit"&gt;Request my&amp;nbsp;proposal&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<h3 class="title-sm mt-2">Form&nbsp;states</h3>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--block styleguide-example--narrow">
+<div class="form">
+  <label class="field">Email<input type="email" class="input input--fill" aria-invalid="true" aria-describedby="sg-email-error"><span class="field-error" id="sg-email-error" aria-hidden="true"><span class="field-error__text">Enter your email address so we can&nbsp;reply.</span></span></label>
+  <label class="field">Disabled<input type="text" class="input input--fill" value="Not editable" disabled></label>
+  <div class="form-alert form-alert--error"><span class="form-alert__icon" aria-hidden="true">!</span><span class="form-alert__text">We couldn't send your request. Check your connection and try again, or call&nbsp;{{phone}}.</span></div>
+  <div class="form-alert form-alert--success"><span class="form-alert__icon" aria-hidden="true">✓</span><span class="form-alert__text">Request received. Taking you to the confirmation&nbsp;page.</span></div>
+  <div class="upload upload--attached"><span class="upload__title">Submitting an&nbsp;RFP?</span><div class="upload__file"><span class="upload__name"><strong>Bid-package-2027.pdf</strong> · 2.4&nbsp;MB</span><button type="button" class="upload__remove hit">Remove</button></div></div>
+  <button type="button" class="submit" aria-busy="true" aria-disabled="true"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Sending your&nbsp;request…</button>
+</div>
+</div>
+<pre class="styleguide-code"><code>&lt;!-- Field error: inside the &lt;label&gt;, after the control (set by forms.js) --&gt;
+&lt;label class="field"&gt;Email
+  &lt;input type="email" class="input input--fill" aria-invalid="true" aria-describedby="rfp-email-error"&gt;
+  &lt;span class="field-error" id="rfp-email-error" aria-hidden="true"&gt;&lt;span class="field-error__text"&gt;Enter your email address so we can&amp;nbsp;reply.&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;!-- Whole-form result, before the submit button: role="alert" (error) or role="status" (sent) --&gt;
+&lt;div class="form-alert form-alert--error" role="alert"&gt;&lt;span class="form-alert__icon" aria-hidden="true"&gt;!&lt;/span&gt;&lt;span class="form-alert__text"&gt;…&lt;/span&gt;&lt;/div&gt;
+
+&lt;!-- RFP panel with a file attached (the picker label is [hidden]) --&gt;
+&lt;div class="upload upload--attached"&gt;
+  &lt;div class="upload__file"&gt;&lt;span class="upload__name"&gt;&lt;strong&gt;name.pdf&lt;/strong&gt; · 2.4&amp;nbsp;MB&lt;/span&gt;&lt;button type="button" class="upload__remove hit"&gt;Remove&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Submit while sending --&gt;
+&lt;button type="submit" class="submit" aria-busy="true" aria-disabled="true"&gt;
+  &lt;span class="dots" aria-hidden="true"&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;Sending your&amp;nbsp;request…
+&lt;/button&gt;</code></pre>
+</div>
+<p class="desc styleguide-note">Exact error copy for each&nbsp;field:</p>
+<div class="styleguide-table-wrap mt-2"><table class="styleguide-table"><caption class="visually-hidden">Form error messages</caption><thead><tr><th scope="col">Field</th><th scope="col">Message</th></tr></thead><tbody>
+<tr><th scope="row">Name</th><td>Enter your&nbsp;name.</td></tr>
+<tr><th scope="row">Email</th><td>Enter your email address so we can&nbsp;reply.</td></tr>
+<tr><th scope="row">Phone</th><td>Enter a 10-digit phone&nbsp;number.</td></tr>
+<tr><th scope="row">Services&nbsp;needed</th><td>Tell us what the property needs, even in a&nbsp;sentence.</td></tr>
+<tr><th scope="row">File too&nbsp;large</th><td>That file is over 25 MB. Email it to info@masterlandscapemaintenance.com&nbsp;instead.</td></tr>
+<tr><th scope="row">Wrong file&nbsp;type</th><td>Attach a PDF, Word document or ZIP&nbsp;file.</td></tr>
+</tbody></table></div>
+<div class="styleguide-table-wrap mt-2"><table class="styleguide-table"><caption class="visually-hidden">Upload and submitting copy</caption><thead><tr><th scope="col">State</th><th scope="col">Copy</th></tr></thead><tbody>
+<tr><th scope="row">File upload&nbsp;·&nbsp;empty</th><td>Attach specs or bid package. PDF, Word or ZIP, up to 25&nbsp;MB.</td></tr>
+<tr><th scope="row">File upload&nbsp;·&nbsp;attached</th><td>File name and size, with a Remove&nbsp;button.</td></tr>
+<tr><th scope="row">Submit&nbsp;·&nbsp;sending</th><td>Sending your&nbsp;request…</td></tr>
+<tr><th scope="row">Form&nbsp;·&nbsp;success</th><td>Request received. Taking you to the confirmation&nbsp;page.</td></tr>
+<tr><th scope="row">Form&nbsp;·&nbsp;error</th><td>We couldn’t send your request. Check your connection and try again, or call&nbsp;714.531.0549.</td></tr>
+</tbody></table></div>
+  </div>
+</section>
+<section aria-labelledby="sg-nav" class="section section--soft">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-nav" class="heading">Navigation</h2><p class="subhead">08 · Header, Services dropdown, phone menu and the sticky call&nbsp;bar.</p>
+    </div>
+
+<ul class="points mt-2">
+  <li><span class="points__num">01</span><h3 class="title-sm">Services dropdown</h3><p class="desc">Opens on hover or keyboard focus. Five pillars plus “All services”. <code>nav.js</code> sets <code>aria-expanded</code> and Escape closes&nbsp;it.</p></li>
+  <li><span class="points__num">02</span><h3 class="title-sm">Phone header</h3><p class="desc">Under 720 px: logo and a Menu button only (a native <code>&lt;details&gt;</code>). The menu holds every link plus both&nbsp;actions.</p></li>
+  <li><span class="points__num">03</span><h3 class="title-sm">Sticky call bar</h3><p class="desc">Fixed to the bottom of the screen on phones: Call and Request a&nbsp;proposal.</p></li>
+  <li><span class="points__num">04</span><h3 class="title-sm">Current page</h3><p class="desc">Gold underline on desktop; gold edge in the phone menu. Set by front matter&nbsp;<code>nav:</code>.</p></li>
+  <li><span class="points__num">05</span><h3 class="title-sm">Breadcrumbs</h3><p class="desc">Every page except home. An ordered list; separators come from&nbsp;CSS.</p></li>
+</ul>
+<p class="desc styleguide-note">The header and footer at the top and bottom of this page are the live components. Resize below 720 px to see the phone&nbsp;menu.</p>
+<pre class="styleguide-code styleguide-code--solo"><code>&lt;!-- src/layouts/base.html wraps every page --&gt;
+&lt;!-- @include header --&gt;    &lt;!-- active item: front matter  nav: services | clients | areas | about | contact --&gt;
+&lt;main id="main"&gt;...&lt;/main&gt;
+&lt;!-- @include footer --&gt;    &lt;!-- includes the phone quick-action bar --&gt;</code></pre>
+  </div>
+</section>
+<section aria-labelledby="sg-bands" class="section">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-bands" class="heading">Callouts &amp;&nbsp;bands</h2><p class="subhead">09 · Callouts are used once per page, for deadlines and&nbsp;rules.</p>
+    </div>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--block">
+<div class="callout">
+  <div class="callout__body"><h3 class="title-md">Don’t remove turf before&nbsp;approval</h3><p class="callout__text">Rebates need pre-approval. Removing turf first can void&nbsp;them.</p></div>
+  <a href="GuideRebates.html" class="btn btn--primary callout__btn">Read the&nbsp;guide&nbsp;→</a>
+</div>
+</div>
+<pre class="styleguide-code"><code>&lt;div class="callout"&gt;
+  &lt;div class="callout__body"&gt;&lt;h3 class="title-md"&gt;Don’t remove turf before&amp;nbsp;approval&lt;/h3&gt;&lt;p class="callout__text"&gt;Rebates need pre-approval. Removing turf first can void&amp;nbsp;them.&lt;/p&gt;&lt;/div&gt;
+  &lt;a href="GuideRebates.html" class="btn btn--primary callout__btn"&gt;Read the&amp;nbsp;guide&amp;nbsp;→&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--dark styleguide-example--block">
+<ul class="stats">
+  <li><span class="stats__value">40+</span><span class="stats__label">years serving four&nbsp;counties</span></li>
+  <li><span class="stats__value">3</span><span class="stats__label">facilities, including our own&nbsp;nursery</span></li>
+</ul>
+</div>
+<pre class="styleguide-code"><code>&lt;section aria-label="At a glance" class="band-dark"&gt;
+  &lt;ul class="stats"&gt;&lt;li&gt;&lt;span class="stats__value"&gt;40+&lt;/span&gt;&lt;span class="stats__label"&gt;years&lt;/span&gt;&lt;/li&gt;...&lt;/ul&gt;
+&lt;/section&gt;</code></pre>
+</div>
+<p class="desc styleguide-note">The closing dark band at the bottom of this page is the <code>cta</code> partial. On dark, <code>em</code> turns gold; use <code>.dark-list</code> for ruled checklists and <code>.text-gold-pale</code> for&nbsp;eyebrows.</p>
+<pre class="styleguide-code styleguide-code--solo"><code>&lt;!-- @include cta heading="Need a proposal in&amp;nbsp;&lt;em&gt;City?&lt;/em&gt;" text="..." --&gt;
+&lt;!-- @include service-areas class="section" --&gt;    &lt;!-- the four-county city chips --&gt;
+&lt;!-- @include procurement-card --&gt;                 &lt;!-- public agency facts, PublicAgencies and Certifications --&gt;</code></pre>
+  </div>
+</section>
+<section aria-labelledby="sg-lists" class="section section--soft">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-lists" class="heading">Lists</h2><p class="subhead">10 · Ruled lists for points, and question-and-answer&nbsp;lists.</p>
+    </div>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--block">
+<ul class="points">
+  <li><span class="points__num">01</span><h3 class="title-sm">Full-time&nbsp;supervision</h3><p class="desc">A supervisor on site, full&nbsp;time.</p></li>
+  <li><span class="points__num">02</span><h3 class="title-sm">Uniformed&nbsp;crews</h3><p class="desc">Easily identified vehicles at every&nbsp;property.</p></li>
+</ul>
+</div>
+<pre class="styleguide-code"><code>&lt;ul class="points"&gt;
+  &lt;li&gt;&lt;span class="points__num"&gt;01&lt;/span&gt;&lt;h3 class="title-sm"&gt;Full-time&amp;nbsp;supervision&lt;/h3&gt;&lt;p class="desc"&gt;A supervisor on site, full&amp;nbsp;time.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class="points__num"&gt;02&lt;/span&gt;&lt;h3 class="title-sm"&gt;Uniformed&amp;nbsp;crews&lt;/h3&gt;&lt;p class="desc"&gt;Easily identified vehicles at every&amp;nbsp;property.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--block">
+<dl class="faq">
+  <div><dt>Who supervises the&nbsp;work?</dt><dd>A Master Landscape supervisor, full&nbsp;time.</dd></div>
+</dl>
+</div>
+<pre class="styleguide-code"><code>&lt;dl class="faq"&gt;
+  &lt;div&gt;&lt;dt&gt;Who supervises the&amp;nbsp;work?&lt;/dt&gt;&lt;dd&gt;A Master Landscape supervisor, full&amp;nbsp;time.&lt;/dd&gt;&lt;/div&gt;
+&lt;/dl&gt;</code></pre>
+</div>
+  </div>
+</section>
+<section aria-labelledby="sg-images" class="section">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-images" class="heading">Images</h2><p class="subhead">11 · Real photos only, served as AVIF, WebP or&nbsp;JPEG.</p>
+    </div>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--block">
+<div class="frame frame--clip"><picture><source type="image/avif" srcset="assets/img/sprinkler-spray-480.avif 480w, assets/img/sprinkler-spray-801.avif 801w, assets/img/sprinkler-spray.avif 1200w" sizes="(max-width: 900px) calc(100vw - 100px), 600px"><source type="image/webp" srcset="assets/img/sprinkler-spray-480.webp 480w, assets/img/sprinkler-spray-801.webp 801w, assets/img/sprinkler-spray.webp 1200w" sizes="(max-width: 900px) calc(100vw - 100px), 600px"><img src="assets/img/sprinkler-spray.jpg" srcset="assets/img/sprinkler-spray-480.jpg 480w, assets/img/sprinkler-spray-801.jpg 801w, assets/img/sprinkler-spray.jpg 1200w" sizes="(max-width: 900px) calc(100vw - 100px), 600px" width="1200" height="800" alt="Sprinkler watering a green lawn" class="media media--lg" loading="lazy" decoding="async"></picture></div>
+</div>
+<pre class="styleguide-code"><code>&lt;picture&gt;
+  &lt;source type="image/avif" srcset="assets/img/sprinkler-spray-480.avif 480w, assets/img/sprinkler-spray-801.avif 801w, assets/img/sprinkler-spray.avif 1200w" sizes="(max-width: 900px) calc(100vw - 100px), 600px"&gt;
+  &lt;source type="image/webp" srcset="assets/img/sprinkler-spray-480.webp 480w, assets/img/sprinkler-spray-801.webp 801w, assets/img/sprinkler-spray.webp 1200w" sizes="(max-width: 900px) calc(100vw - 100px), 600px"&gt;
+  &lt;img src="assets/img/sprinkler-spray.jpg" srcset="assets/img/sprinkler-spray-480.jpg 480w, assets/img/sprinkler-spray-801.jpg 801w, assets/img/sprinkler-spray.jpg 1200w" sizes="(max-width: 900px) calc(100vw - 100px), 600px" width="1200" height="800" alt="Sprinkler watering a green lawn" class="media media--lg" loading="lazy" decoding="async"&gt;
+&lt;/picture&gt;</code></pre>
+</div>
+<p class="desc styleguide-note"><code>.frame</code> adds the border and 8 px shadow. Heights: <code>media--xs</code> 160, <code>--sm</code> 220, <code>--md</code> 280, <code>--lg</code> 340, <code>--xl</code> 400&nbsp;px. <code>width</code> and <code>height</code> are the source size; lazy-load everything below the first screen. Put a new original in <code>source-images/</code> and <code>node tools/images.mjs encode</code> makes the&nbsp;variants.</p>
+<div class="styleguide-demo">
+<div class="styleguide-example styleguide-example--column">
+<div role="img" aria-label="Image placeholder: project photo" class="placeholder media--sm"><span class="placeholder__label">Project photo: property type and&nbsp;city</span></div>
+<p class="todo">To confirm: license number before&nbsp;launch.</p>
+</div>
+<pre class="styleguide-code"><code>&lt;div role="img" aria-label="Image placeholder: project photo" class="placeholder media--sm"&gt;&lt;span class="placeholder__label"&gt;Project photo: property type and&amp;nbsp;city&lt;/span&gt;&lt;/div&gt;
+&lt;p class="todo"&gt;To confirm: license number before&amp;nbsp;launch.&lt;/p&gt;</code></pre>
+</div>
+<p class="desc styleguide-note">Design notes, not shipped: the striped <code>.placeholder</code> stands in for a missing photo and <code>.todo</code> marks a detail the client must confirm. <code>node build.mjs --prod</code> fails while either&nbsp;remains.</p>
+  </div>
+</section>
+<section aria-labelledby="sg-states" class="section section--soft">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-states" class="heading">Designed&nbsp;states</h2><p class="subhead">12 · Specified in the design, not yet built into the site&nbsp;CSS.</p>
+    </div>
+
+<p class="desc">The design specifies these hover, pressed and disabled states. The site currently uses focus rings, nav and dropdown hover, and link color change only. Adding them is a visible change, so it needs sign-off; when built, move the values into <code>components.css</code> and show them live&nbsp;here.</p>
+<div class="styleguide-table-wrap mt-2"><table class="styleguide-table"><caption class="visually-hidden">Designed interaction states</caption><thead><tr><th scope="col">Component</th><th scope="col">Hover</th><th scope="col">Pressed</th><th scope="col">Disabled</th></tr></thead><tbody>
+<tr><th scope="row">Primary&nbsp;button</th><td>Lift: <code>translate(-2px, -2px)</code>, shadow 6 px</td><td>Sink: <code>translate(4px, 4px)</code>, no shadow</td><td>Border #9AA79E, fill #E4E8E2, text #5E6B63</td></tr>
+<tr><th scope="row">Secondary&nbsp;button</th><td>Fill <code>--soft</code></td><td>Fill #E4E8E2</td><td>Border #9AA79E, text #5E6B63</td></tr>
+<tr><th scope="row">Text&nbsp;link</th><td>Underline 3 px <code>--gold</code></td><td>—</td><td>—</td></tr>
+<tr><th scope="row">Link&nbsp;card</th><td>Lift: <code>translate(-3px, -3px)</code>, shadow 9 px</td><td>—</td><td>—</td></tr>
+<tr><th scope="row">City&nbsp;chip</th><td>Fill <code>--soft</code></td><td>—</td><td>—</td></tr>
+<tr><th scope="row">Gallery&nbsp;filter</th><td>Selected: fill <code>--gold</code>, shadow 4 px</td><td>—</td><td>—</td></tr>
+<tr><th scope="row">Form&nbsp;field</th><td>—</td><td>—</td><td>Border #9AA79E, fill #E4E8E2, text #5E6B63</td></tr>
+</tbody></table></div>
+  </div>
+</section>
+<section aria-labelledby="sg-voice" class="section">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-voice" class="heading">Voice &amp;&nbsp;imagery</h2><p class="subhead">13 · How the site sounds and what it&nbsp;shows.</p>
+    </div>
+
+<ul class="points mt-2">
+  <li><span class="points__num">01</span><h3 class="title-sm">Lead with proof</h3><p class="desc">Name the County, the cities and the credentials before&nbsp;adjectives.</p></li>
+  <li><span class="points__num">02</span><h3 class="title-sm">Answer first</h3><p class="desc">Open every page with the direct answer to its&nbsp;question.</p></li>
+  <li><span class="points__num">03</span><h3 class="title-sm">Plain and specific</h3><p class="desc">Short sentences. Numbers, places and property&nbsp;types.</p></li>
+  <li><span class="points__num">04</span><h3 class="title-sm">Real photos only</h3><p class="desc">Their crews and properties, captioned with property type and&nbsp;city.</p></li>
+  <li><span class="points__num">05</span><h3 class="title-sm">One accent</h3><p class="desc">Gold is for action and emphasis. One italic phrase per heading, at&nbsp;most.</p></li>
+  <li><span class="points__num">06</span><h3 class="title-sm">Keep it simple</h3><p class="desc">No decorative extras. Square corners, heavy rules, hard&nbsp;shadows.</p></li>
+</ul>
+  </div>
+</section>
+<section aria-labelledby="sg-brand" class="section section--soft">
+  <div class="section__inner">
+    <div class="section-head">
+      <h2 id="sg-brand" class="heading">Brand&nbsp;assets</h2><p class="subhead">14 · Favicon and share&nbsp;image.</p>
+    </div>
+
+<div class="styleguide-example mt-2">
+  <figure class="styleguide-asset"><img src="assets/favicon.svg" alt="Favicon: gold M on an ink square" width="64" height="64"><figcaption class="meta">favicon.svg · any&nbsp;size</figcaption></figure>
+  <figure class="styleguide-asset"><img src="assets/favicon-32.png" alt="32 pixel favicon" width="32" height="32"><figcaption class="meta">favicon-32.png · 32&nbsp;px</figcaption></figure>
+  <figure class="styleguide-asset"><img src="assets/apple-touch-icon.png" alt="Apple touch icon" width="90" height="90"><figcaption class="meta">apple-touch-icon.png · 180&nbsp;px</figcaption></figure>
+</div>
+<p class="desc styleguide-note">Gold M on an ink square: gold on ink is 8.4 : 1 and reads at 16&nbsp;px.</p>
+<div class="styleguide-example styleguide-example--block mt-2">
+  <figure class="styleguide-asset styleguide-asset--og"><img src="assets/og-image.png" alt="Share image: Master Landscape &amp; Maintenance, commercial landscape maintenance, supervised full time" width="1200" height="630" loading="lazy" decoding="async"><figcaption class="meta">og-image.png · 1200 × 630, shown at half size. One image for every page; a page can override it with a project&nbsp;photo.</figcaption></figure>
+</div>
+<pre class="styleguide-code styleguide-code--solo"><code>&lt;!-- src/partials/head.html: paths stay relative; og:image needs an absolute URL --&gt;
+&lt;link rel="icon" href="assets/favicon.svg" type="image/svg+xml"&gt;
+&lt;link rel="icon" href="assets/favicon-32.png" sizes="32x32"&gt;
+&lt;link rel="apple-touch-icon" href="assets/apple-touch-icon.png"&gt;
+&lt;meta property="og:image" content="(site url)/assets/og-image.png"&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;</code></pre>
+  </div>
+</section>
+<!-- @include cta heading="Build pages from these&nbsp;<em>parts.</em>" text="Reuse a component before adding one. A new component goes into components.css, CONVENTIONS.md and this&nbsp;page." -->

@@ -1,0 +1,223 @@
+/* Guides (articles with a table of contents) and the Resources hub's featured guide. */
+
+/* Table of contents beside the article */
+.article-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8) var(--space-11);
+  align-items: flex-start;
+}
+.toc {
+  flex: 0 1 260px;
+  min-width: 0;
+  border-top: var(--border);
+}
+.toc__title {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--rule);
+}
+.toc__list {
+  padding: 0;
+  list-style: none;
+}
+.toc__link {
+  display: block;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Article body */
+.article {
+  flex: 1 1 640px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+/* Inline links in running text and sources */
+.article a:is(:not([class]), .hit) { text-underline-offset: 3px; }
+.article-summary {
+  background: var(--gold-pale);
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.article-summary__text {
+  font-size: 21px;
+  line-height: 1.55;
+}
+.article__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.article__section--tight { gap: var(--space-3); }
+.article__heading {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+  padding-bottom: var(--space-4);
+  border-bottom: var(--border);
+}
+.article__text {
+  max-width: 68ch;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.sources {
+  padding-left: var(--space-5);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Checklist with empty tick boxes */
+.checklist {
+  padding: 0;
+  list-style: none;
+  border-top: var(--border);
+}
+.checklist > li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.checklist__box {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border: var(--border);
+  background: var(--soft);
+}
+
+/* Numbered steps */
+.steps {
+  padding: 0;
+  list-style: none;
+}
+.steps > li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-bottom: var(--border);
+}
+.steps__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: var(--border);
+  background: var(--gold);
+  font-family: var(--sans);
+  font-weight: 700;
+}
+.steps__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.steps__title {
+  font-size: 21px;
+  font-weight: 600;
+}
+.steps__text {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Data table */
+.table-wrap { overflow-x: auto; }
+.data-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+.data-table thead th {
+  text-align: left;
+  padding: var(--space-2) 0;
+  border-bottom: var(--border);
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.data-table tbody th {
+  text-align: left;
+  padding: var(--space-4) var(--space-4) var(--space-4) 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: top;
+}
+.data-table td {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  vertical-align: top;
+}
+
+/* Featured guide card (Resources) */
+.feature-guide {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--ink);
+  color: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-gold);
+  text-decoration: none;
+}
+.feature-guide__body {
+  flex: 1 1 520px;
+  min-width: 0;
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.feature-guide__title {
+  font-size: clamp(28px, 2.8vw, 38px);
+  line-height: 1.2;
+  font-weight: 600;
+}
+.feature-guide__text {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--on-dark);
+}
+.feature-guide__more {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.feature-guide__media {
+  flex: 1 1 400px;
+  min-width: 0;
+  border-left: 2px solid var(--gold);
+}
+.feature-guide__img {
+  height: 100%;
+  min-height: 300px;
+}

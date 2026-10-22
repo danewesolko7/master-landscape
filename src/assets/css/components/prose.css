@@ -1,0 +1,54 @@
+/* Text pages: the Privacy policy's ruled sections and the Sitemap's page index. */
+
+.prose {
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+}
+.prose__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6) 0;
+  border-bottom: var(--border);
+}
+.prose__text { max-width: 70ch; font-size: 18px; line-height: 1.7; }
+
+/* Sitemap: the build fills it from every page's breadcrumb (build.mjs, siteIndex). */
+.sitemap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--grid-default)), 1fr));
+  gap: var(--space-8) var(--space-9);
+  align-items: start;
+}
+.sitemap__title {
+  margin: 0 0 var(--space-2);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border);
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+.sitemap__title a { display: inline-block; padding-block: 6px; margin-block: -6px; text-decoration: none; }
+.sitemap__title a:hover { text-decoration: underline; }
+.sitemap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.sitemap ul ul {
+  margin: 0 0 var(--space-2) var(--space-1);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--rule);
+  font-size: 15px;
+}
+.sitemap li a {
+  display: inline-block;
+  padding-block: 10px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.sitemap ul ul a { font-weight: 500; color: var(--muted); }

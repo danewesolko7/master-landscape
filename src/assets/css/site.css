@@ -1,0 +1,27 @@
+/* Entry stylesheet. The build inlines every @import into one file (dist/assets/css/site.css),
+   wrapping each in its layer, so the browser makes a single request.
+   Layer order: later layers win regardless of selector specificity. */
+@layer reset, tokens, base, layout, components, utilities;
+
+@import url("reset.css") layer(reset);
+@import url("tokens.css") layer(tokens);
+@import url("base.css") layer(base);
+@import url("layout.css") layer(layout);
+@import url("components.css") layer(components);
+
+/* Page-specific components: what one page or page type needs. Shared ones live in components.css. */
+@import url("components/home.css") layer(components);
+@import url("components/services.css") layer(components);
+@import url("components/audience.css") layer(components);
+@import url("components/areas.css") layer(components);
+@import url("components/articles.css") layer(components);
+@import url("components/about.css") layer(components);
+@import url("components/clients.css") layer(components);
+@import url("components/credentials.css") layer(components);
+@import url("components/gallery.css") layer(components);
+@import url("components/contact.css") layer(components);
+@import url("components/prose.css") layer(components);
+@import url("components/capabilities.css") layer(components);
+@import url("components/styleguide.css") layer(components);
+
+@import url("utilities.css") layer(utilities);

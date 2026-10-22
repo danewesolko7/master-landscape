@@ -1,0 +1,88 @@
+<!--
+title: Request a Proposal | Master Landscape & Maintenance
+description: Request a landscape maintenance proposal, submit an RFP or call 714.531.0549. Serving Los Angeles, Orange, Riverside and San Bernardino counties.
+nav: contact
+schema: business
+scripts: forms
+-->
+<section aria-labelledby="page-title">
+  <div class="section__inner section__inner--top">
+    <nav aria-label="Breadcrumb" class="breadcrumb"><ol><li><a href="index.html">Home</a></li> <li aria-current="page">Contact&nbsp;Us</li></ol></nav>
+    <div class="hero">
+      <div class="hero__main">
+        <p class="eyebrow">Proposals, RFPs &amp; service&nbsp;calls</p>
+        <h1 id="page-title" class="title">Request a&nbsp;<em>Proposal</em></h1>
+        <p class="lede">Request a proposal, submit an RFP or call the office. Serving Los Angeles, Orange, Riverside and San Bernardino&nbsp;counties.</p>
+      </div>
+      <div class="hero__aside">
+        <p class="hero__note">Main office in Westminster, with facilities in Irvine and&nbsp;Chino.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section aria-label="Request a proposal" class="section section--soft">
+  <div class="split split--top"><form id="rfp" data-form data-msg-sending="Sending your&nbsp;request…" data-msg-sent="Request received. Taking you to the confirmation&nbsp;page." data-msg-failed="We couldn't send your request. Check your connection and try again, or call&nbsp;{{phone}}." action="{{form_action}}" method="{{form_method}}" enctype="multipart/form-data" aria-labelledby="form-title" class="form form--rfp">
+        <h2 id="form-title" class="title-md">Request a&nbsp;proposal</h2>
+        <p class="meta">For maintenance contracts, renovations and public bids. We reply within [X] business&nbsp;days.</p>
+        <input type="hidden" name="form" value="contact-rfp">
+        <input type="hidden" name="_next" value="{{url}}/ThankYou.html">
+        <label class="field">Name<input type="text" name="name" autocomplete="name" required data-msg-required="Enter your&nbsp;name." class="input input--fill"></label>
+        <label class="field">Company or property<input type="text" name="company" autocomplete="organization" class="input input--fill"></label>
+        <div class="field-row">
+          <label class="field">Email<input type="email" name="email" autocomplete="email" required data-msg-required="Enter your email address so we can&nbsp;reply." class="input input--fill"></label>
+          <label class="field">Phone<input type="tel" name="phone" autocomplete="tel" pattern="\+?1?(?:\D*\d){10}\D*" data-msg-format="Enter a 10-digit phone&nbsp;number." class="input input--fill"></label>
+        </div>
+        <div class="field-row">
+          <label class="field">Property type<select name="property_type" class="input input--fill input--select"><option>HOA / community association</option><option>Commercial / industrial property</option><option>Apartment community</option><option>Public agency</option></select></label>
+          <label class="field">Property city<input type="text" name="property_city" autocomplete="address-level2" class="input input--fill"></label>
+        </div>
+        <label class="field">Services needed<textarea name="services" rows="4" required data-msg-required="Tell us what the property needs, even in a&nbsp;sentence." class="input input--fill input--area"></textarea></label>
+        <label class="visually-hidden" aria-hidden="true">Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <div class="upload">
+          <span class="upload__title">Submitting an&nbsp;RFP?</span>
+          <label class="field field--sm">Attach specs or bid package (optional)<input type="file" name="attachment" accept=".pdf,.doc,.docx,.zip" data-max-mb="25" data-msg-size="That file is over 25&nbsp;MB. Email it to&nbsp;{{email}}&nbsp;instead." data-msg-type="Attach a PDF, Word document or ZIP&nbsp;file." class="input-file"></label>
+        </div>
+        <button type="submit" class="submit">Request my&nbsp;proposal</button>
+        <p class="form-note">Customer Satisfaction Guaranteed</p>
+      </form><div class="contact-aside">
+        <div class="contact-card">
+          <p class="eyebrow text-gold-pale">Office</p>
+          <a href="tel:7145310549" class="contact-card__phone">714.531.0549</a>
+          <address class="contact-card__text"><strong class="text-white">Robert Whitecotton, President</strong><br>14600 Goldenwest St., Suite 210<br>Westminster, CA&nbsp;92683</address>
+          <dl class="contact-list">
+            <div class="contact-list__row">
+              <dt class="contact-list__term">Cell</dt>
+              <dd class="contact-list__value"><a href="tel:7144480305" class="link-quiet hit">714.448.0305</a></dd>
+            </div>
+            <div class="contact-list__row">
+              <dt class="contact-list__term">Fax</dt>
+              <dd class="contact-list__value">714.373.4816</dd>
+            </div>
+            <div class="contact-list__row">
+              <dt class="contact-list__term">Email</dt>
+              <dd class="contact-list__value"><a href="mailto:{{email}}" class="link-quiet hit">{{email}}</a></dd>
+            </div>
+            <div class="contact-list__row">
+              <dt class="contact-list__term">Hours</dt>
+              <dd class="contact-list__value">7:00 am – 3:00&nbsp;pm</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="emergency-card">
+          <p class="eyebrow">24/7 emergency&nbsp;service</p>
+          <p class="text-lg">Storm damage, broken mainlines, fallen trees. Call the office line any&nbsp;time.</p>
+          <a href="tel:7145310549" class="text-link self-start">Call&nbsp;714.531.0549&nbsp;→</a>
+        </div>
+        <p class="todo">To confirm: days of the week, the after-hours number, and whether the cell number should be&nbsp;public.</p>
+      </div></div>
+</section>
+<section aria-labelledby="map-title" class="section">
+  <div class="section__inner section__inner--tight">
+    <div class="section-head">
+      <h2 id="map-title" class="heading">Our&nbsp;<em>Locations</em></h2>
+      <p class="subhead">Westminster main office · Irvine facility · Chino facility &amp;&nbsp;nursery</p>
+    </div>
+    <div class="frame"><!-- @include facilities-map --></div>
+  </div>
+</section>
+<!-- @include service-areas class="section section--soft" -->
